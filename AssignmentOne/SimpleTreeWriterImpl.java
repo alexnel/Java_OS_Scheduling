@@ -32,7 +32,7 @@ public class SimpleTreeWriterImpl extends Object implements SimpleTreeWriter {
 	   {
 		   output.println(" ");
 	   }
-	   output.printf("%3d", currentlevel.get(0));
+	   output.printf("%3d", currentlevel.get(0).getItem());
 	   currentlevel = tree.nextLevel(currentlevel);
 	   int level = 1;//this is the level we are on - will be compared to height later.
 	   while(currentlevel!=null)
@@ -44,14 +44,16 @@ public class SimpleTreeWriterImpl extends Object implements SimpleTreeWriter {
 		   {
 			   output.println(" ");
 		   }
+		   //chnage level using recursion
 		   currentlevel = tree.nextLevel(currentlevel);
+		   //loop through items in list
 		   for (int i=0; i<currentlevel.size(); i++)
 		   {
 			   //need something here for the spacing between each node.
-			   if (currentlevel.get(i)==null)
+			   if (tree.isPlaceHolder(currentlevel.get(i)))
 				   output.println("   ");//3spaces?
 			   else
-				   output.printf("%3d", currentlevel.get(i));
+				   output.printf("%3d", currentlevel.get(i).getItem());
 			   for (int k=0; k<between; k++)
 			   {
 				   output.println(" ");

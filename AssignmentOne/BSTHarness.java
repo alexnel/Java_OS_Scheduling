@@ -6,8 +6,8 @@ import java.util.*;
  * Asks the user to input a sequence of integers, constructs a SimpleBST from them, and prints
  * it out.
  * 
- * @author Stephan Jamieson 
- * @version 25/2/2015
+ * @author Stephan Jamieson, edited extensively by Alexandra Nel
+ * @version 4 March 2015
  */
 public class BSTHarness {
 
