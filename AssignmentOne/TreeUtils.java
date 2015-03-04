@@ -72,5 +72,3 @@ public class TreeUtils {
       return true;
     }
 }
-
-//if both left and right, recurse for left and right, if just one recurse for one
