@@ -41,11 +41,12 @@ public class BSTHarness {
         SimpleBST.print(tree1, new SimpleTreeWriterImpl(System.out));
         System.out.print("Tree two:");
         SimpleBST.print(tree2, new SimpleTreeWriterImpl(System.out));
-//        PrintStream writeTree1 = new PrintStream(new File("T1.out"));
-//        SimpleBST.print(tree1, new SimpleTreeWriterImpl(writeTree1));
-//        writeTree1.close();
-//        PrintStream writeTree2 = new PrintStream(new File("T2.out"));
-//        SimpleBST.print(tree2, new SimpleTreeWriterImpl(writeTree2));
-//        writeTree2.close();
+        
+        PrintStream writeTree1 = new PrintStream(new File("T1.out"));
+        SimpleBST.print(tree1, new SimpleTreeWriterImpl(writeTree1));
+        writeTree1.close();
+        PrintStream writeTree2 = new PrintStream(new File("T2.out"));
+        SimpleBST.print(tree2, new SimpleTreeWriterImpl(writeTree2));
+        writeTree2.close();
     }
 }
