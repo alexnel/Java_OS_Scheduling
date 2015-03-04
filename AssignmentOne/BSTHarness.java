@@ -22,7 +22,7 @@ public class BSTHarness {
         while (scanner.hasNextInt() ){
             tree1.insert(scanner.nextInt());
         }
-        
+        System.out.print("Enter a second comma separated sequence of node values: ");
         Scanner scan = new Scanner(System.in);
         scan = new Scanner(scan.nextLine()).useDelimiter("\\s*,\\s*");
 
@@ -31,9 +31,16 @@ public class BSTHarness {
         while (scan.hasNextInt() ){
             tree2.insert(scan.nextInt());
         }
-        System.out.print(tree1.similar(tree2));
-        //SimpleBST.print(tree1, new SimpleTreeWriterImpl(System.out));
         
+        if (tree1.similar(tree2))
+        	System.out.println("The two trees are similar.");
+        else
+        	System.out.println("The two trees are not similar.");
+        
+        System.out.print("Tree one:");
+        SimpleBST.print(tree1, new SimpleTreeWriterImpl(System.out));
+        System.out.print("Tree two:");
+        SimpleBST.print(tree2, new SimpleTreeWriterImpl(System.out));
 //        PrintStream writeTree1 = new PrintStream(new File("T1.out"));
 //        SimpleBST.print(tree1, new SimpleTreeWriterImpl(writeTree1));
 //        writeTree1.close();

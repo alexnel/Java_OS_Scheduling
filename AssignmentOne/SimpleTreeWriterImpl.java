@@ -26,25 +26,38 @@ public class SimpleTreeWriterImpl extends Object implements SimpleTreeWriter {
 	   SimpleBST bst = new SimpleBST();
 	   List<BinaryTreeNode> currentlevel = tree.levelZero(node);
 	   int height = bst.getHeight();
-	   for (int j=0; j<4; j++)//equation of height spacing needed)
+	   int leading = (int)((Math.pow(2,height)-1)/2);
+	   //print leading spaces
+	   for (int j=0; j<leading; j++)
 	   {
-		   output.println("   ");//3spaces??
+		   output.println(" ");
 	   }
-	   output.println(currentlevel.get(0));
+	   output.printf("%3d", currentlevel.get(0));
 	   currentlevel = tree.nextLevel(currentlevel);
-	   //int level = 2;//this is the level we are on - will be compared to height later.
+	   int level = 1;//this is the level we are on - will be compared to height later.
 	   while(currentlevel!=null)
 	   {
+		   leading = (int)((Math.pow(2,height-level)-1)/2);
+		   int between = (int)(Math.pow(2,height-level));
+		   //print leading spaces
+		   for (int l=0; l<leading; l++)
+		   {
+			   output.println(" ");
+		   }
 		   currentlevel = tree.nextLevel(currentlevel);
 		   for (int i=0; i<currentlevel.size(); i++)
 		   {
 			   //need something here for the spacing between each node.
-			   if (currentlevel==null)
+			   if (currentlevel.get(i)==null)
 				   output.println("   ");//3spaces?
 			   else
-				   output.println(currentlevel.get(i));//format this to be three spaces wide.
+				   output.printf("%3d", currentlevel.get(i));
+			   for (int k=0; k<between; k++)
+			   {
+				   output.println(" ");
+			   }
 		   }
-		   //level++;
+		   level++;
 	   }
    }
 }

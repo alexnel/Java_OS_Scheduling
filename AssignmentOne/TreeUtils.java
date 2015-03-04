@@ -57,7 +57,7 @@ public class TreeUtils {
       //step2: check if both of current node have left/have right
       else if (treeStructOne.hasLeft() == treeStructTwo.hasLeft() && treeStructOne.hasRight() == treeStructTwo.hasRight())
       {  
-      //step3: go down left node if they have left, apply recursion
+      //step3: go down left/right/both nodes, apply recursion
          if (treeStructOne.hasLeft() && treeStructOne.hasRight())
          {  if (similar(treeStructOne.getLeft(), treeStructTwo.getLeft())==true)
                return similar(treeStructOne.getRight(), treeStructTwo.getRight());
