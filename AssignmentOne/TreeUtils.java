@@ -52,23 +52,24 @@ public class TreeUtils {
          return true;
       else if (treeStructOne == null || treeStructTwo == null)
          return false;
+      else if (treeStructOne.getLeft() == null && treeStructTwo.getLeft() == null && treeStructOne.getRight() == null && treeStructTwo.getRight() == null)
+    	  return true;
       //step2: check if both of current node have left/have right
       else if (treeStructOne.hasLeft() == treeStructTwo.hasLeft() && treeStructOne.hasRight() == treeStructTwo.hasRight())
       {  
       //step3: go down left node if they have left, apply recursion
          if (treeStructOne.hasLeft() && treeStructOne.hasRight())
          {  if (similar(treeStructOne.getLeft(), treeStructTwo.getLeft())==true)
-               similar(treeStructOne.getRight(), treeStructTwo.getRight());
+               return similar(treeStructOne.getRight(), treeStructTwo.getRight());
             else
                return false;
          }
          else if (treeStructOne.hasLeft()==true && treeStructOne.hasRight()==false)
-        	 similar(treeStructOne.getLeft(), treeStructTwo.getLeft());
+        	 return similar(treeStructOne.getLeft(), treeStructTwo.getLeft());
          else
-        	 similar(treeStructOne.getRight(), treeStructTwo.getRight());
+        	 return similar(treeStructOne.getRight(), treeStructTwo.getRight());
       }
       else
          return false;
-      return true;
     }
 }

@@ -1,4 +1,7 @@
 import java.util.Scanner;
+import java.io.PrintStream;
+import java.io.*;
+import java.util.*;
 /**
  * Asks the user to input a sequence of integers, constructs a SimpleBST from them, and prints
  * it out.
@@ -20,22 +23,22 @@ public class BSTHarness {
             tree1.insert(scanner.nextInt());
         }
         
-//        Scanner scan = new Scanner(System.in);
-//        scan = new Scanner(scan.nextLine()).useDelimiter("\\s*,\\s*");
-//
-//        SimpleBST tree2 = new  SimpleBST();
-//        
-//        while (scan.hasNextInt() ){
-//            tree2.insert(scan.nextInt());
-//        }
-//        System.out.print(tree1.similar(tree2));
-        SimpleBST.print(tree1, new SimpleTreeWriterImpl(System.out));
+        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(scan.nextLine()).useDelimiter("\\s*,\\s*");
+
+        SimpleBST tree2 = new  SimpleBST();
         
-        PrintStream writeTree1 = new PrintStream(new File("T1.out"));
-        SimpleBST.print(tree1, new SimpleTreeWriterImpl(writeTree1));
-        writeTree1.close();
-        PrintStream writeTree2 = new PrintStream(new File("T2.out"));
-        SimpleBST.print(tree2, new SimpleTreeWriterImpl(writeTree2));
-        writeTree2.close();
+        while (scan.hasNextInt() ){
+            tree2.insert(scan.nextInt());
+        }
+        System.out.print(tree1.similar(tree2));
+        //SimpleBST.print(tree1, new SimpleTreeWriterImpl(System.out));
+        
+//        PrintStream writeTree1 = new PrintStream(new File("T1.out"));
+//        SimpleBST.print(tree1, new SimpleTreeWriterImpl(writeTree1));
+//        writeTree1.close();
+//        PrintStream writeTree2 = new PrintStream(new File("T2.out"));
+//        SimpleBST.print(tree2, new SimpleTreeWriterImpl(writeTree2));
+//        writeTree2.close();
     }
 }
